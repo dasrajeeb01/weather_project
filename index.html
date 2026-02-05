@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Balasore Luxury Weather Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0a0a0a",
+                        "card-dark": "#161b22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .metallic-sheen {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .atmospheric-particles {
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden h-screen">
+<div class="flex h-full w-full">
+<div class="hidden md:block md:w-[40%] h-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJjhJMkuI44a3hzFmocYhzvhutgRj4di3yJkstqQ1T5RHw0KYidndhl1VUxL8-3kT3jB9LQyLdY9XPPqxULoH-dV0iO8mLIYc-C9VPRZRKd_GGdvF5uRzQzSHcSh7QZN674tlhN08KL_HL7xKRE4lWK2mG8pglhODzFJZ6NZqOckmoJ0BjeizY8yJrm9_LdCHEnG5lcrMe4mpE4MXrtDMPYFd7qgIbMWsR1K21EnWT_i7cy-RAua-Lk8vOVB2gwEN6G56TZTAC1FI');">
+</div>
+<div class="absolute inset-0 atmospheric-particles pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/20 to-background-dark"></div>
+<div class="absolute bottom-12 left-12 z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">wb_sunny</span>
+<span class="text-sm font-bold tracking-[0.2em] uppercase opacity-70">Live Atmosphere</span>
+</div>
+<h3 class="text-2xl font-light italic">"Golden hour light with floating dust particles"</h3>
+</div>
+</div>
+<div class="w-full md:w-[60%] h-full flex flex-col relative overflow-y-auto bg-background-light dark:bg-background-dark">
+<header class="flex items-center justify-between px-8 py-6 sticky top-0 z-30 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-white/10">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">cyclone</span>
+</div>
+<span class="text-xl font-bold tracking-tight uppercase">Balasore Luxury</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-30">Real-time Telemetry</div>
+</div>
+</header>
+<main class="flex-1 px-8 py-10 max-w-5xl mx-auto w-full">
+<div class="block md:hidden mb-8 rounded-2xl overflow-hidden h-48 relative">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaLQebzD6eSZFb8c3wLXOW_uY7O43sOkwFi6JR8v9P6X4NBJQHsv0gbePChvSnn9vkTYCzuDWVnde-o8jAjFcW3LC3xzF_lf8bu_N-C17gNY5pQPK8o0b42W2hauaU9_-XqsZJJ1IVDyd6oh3IAQ6bcV7Ywp54c9EFf8Gd05oK2fnS9-L61QSoAm1pBDbOi-2cl-Hma_wd3g2RwUWOWqRCC43BGi8i9PFm3LNtXaeD_Yve4JnyfEQ4ElMt-c-XYMreGKZ_mD4qhrs')"></div>
+</div>
+<div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+<div class="space-y-2">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-bold tracking-widest uppercase text-xs">Coastal Region Monitoring</span>
+</div>
+<h1 class="text-6xl font-black tracking-tighter uppercase">BALASORE</h1>
+<p class="text-lg text-white/50 font-medium">Monday, Oct 24 • 6:42 PM (Local Time)</p>
+</div>
+<div class="text-right">
+<div class="text-[8rem] font-black leading-none tracking-tighter text-white flex items-start justify-end">
+                        72<span class="text-4xl mt-6">°F</span>
+</div>
+<p class="text-white/40 uppercase tracking-[0.3em] font-bold text-xs mt-2">Clear Skies • Feels like 68°</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="metallic-sheen bg-white/5 p-8 rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-4xl">air</span>
+</div>
+<div class="relative size-32 flex items-center justify-center">
+<svg class="size-full -rotate-90">
+<circle class="text-white/10" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="200" stroke-width="4"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-3xl font-black">12</span>
+<span class="text-[10px] uppercase tracking-widest opacity-50">MPH</span>
+</div>
+</div>
+<p class="mt-6 font-bold tracking-widest text-xs uppercase opacity-70">Wind Speed</p>
+<p class="text-xs text-primary mt-1">+2% from avg</p>
+</div>
+<div class="metallic-sheen bg-white/5 p-8 rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-4xl">light_mode</span>
+</div>
+<div class="relative size-32 flex items-center justify-center">
+<svg class="size-full -rotate-90">
+<circle class="text-white/10" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-orange-500" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="300" stroke-width="4"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-3xl font-black">2.1</span>
+<span class="text-[10px] uppercase tracking-widest opacity-50">LOW</span>
+</div>
+</div>
+<p class="mt-6 font-bold tracking-widest text-xs uppercase opacity-70">UV Index</p>
+<p class="text-xs text-white/40 mt-1">Safe levels</p>
+</div>
+<div class="metallic-sheen bg-white/5 p-8 rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-4xl">humidity_mid</span>
+</div>
+<div class="relative size-32 flex items-center justify-center">
+<svg class="size-full -rotate-90">
+<circle class="text-white/10" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-cyan-400" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="150" stroke-width="4"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-3xl font-black">44</span>
+<span class="text-[10px] uppercase tracking-widest opacity-50">%</span>
+</div>
+</div>
+<p class="mt-6 font-bold tracking-widest text-xs uppercase opacity-70">Humidity</p>
+<p class="text-xs text-red-500 mt-1">-5% drop</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<div class="p-4 border-l-2 border-white/10 bg-white/2">
+<p class="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-1">Visibility</p>
+<p class="text-xl font-bold">10.0 mi</p>
+</div>
+<div class="p-4 border-l-2 border-white/10 bg-white/2">
+<p class="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-1">Pressure</p>
+<p class="text-xl font-bold">29.98 in</p>
+</div>
+<div class="p-4 border-l-2 border-white/10 bg-white/2">
+<p class="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-1">Dew Point</p>
+<p class="text-xl font-bold">52°F</p>
+</div>
+<div class="p-4 border-l-2 border-white/10 bg-white/2">
+<p class="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-1">Precipitation</p>
+<p class="text-xl font-bold">0%</p>
+</div>
+</div>
+<div class="relative">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-sm font-bold tracking-[0.3em] uppercase opacity-70">7-Day Extended Forecast</h2>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-6 scrollbar-hide">
+<div class="min-w-[140px] flex-1 metallic-sheen bg-primary/20 border-primary/50 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-100 text-primary">Today</span>
+<span class="material-symbols-outlined text-4xl text-primary fill-1">wb_sunny</span>
+<div class="text-center">
+<p class="text-2xl font-black">72°</p>
+<p class="text-xs opacity-50">61°</p>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 metallic-sheen bg-white/5 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-40 transition-opacity">Tue</span>
+<span class="material-symbols-outlined text-4xl text-white/80">cloud</span>
+<div class="text-center">
+<p class="text-2xl font-black">68°</p>
+<p class="text-xs opacity-50">59°</p>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 metallic-sheen bg-white/5 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-40 transition-opacity">Wed</span>
+<span class="material-symbols-outlined text-4xl text-white/80">partly_cloudy_day</span>
+<div class="text-center">
+<p class="text-2xl font-black">70°</p>
+<p class="text-xs opacity-50">60°</p>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 metallic-sheen bg-white/5 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-40 transition-opacity">Thu</span>
+<span class="material-symbols-outlined text-4xl text-white/80">wb_sunny</span>
+<div class="text-center">
+<p class="text-2xl font-black">75°</p>
+<p class="text-xs opacity-50">63°</p>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 metallic-sheen bg-white/5 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-40 transition-opacity">Fri</span>
+<span class="material-symbols-outlined text-4xl text-white/80">rainy</span>
+<div class="text-center">
+<p class="text-2xl font-black">64°</p>
+<p class="text-xs opacity-50">55°</p>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 metallic-sheen bg-white/5 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-40 transition-opacity">Sat</span>
+<span class="material-symbols-outlined text-4xl text-white/80">cloudy_snowing</span>
+<div class="text-center">
+<p class="text-2xl font-black">58°</p>
+<p class="text-xs opacity-50">48°</p>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 metallic-sheen bg-white/5 p-6 rounded-xl flex flex-col items-center gap-4">
+<span class="text-xs font-bold uppercase tracking-widest opacity-40 transition-opacity">Sun</span>
+<span class="material-symbols-outlined text-4xl text-white/80">wb_sunny</span>
+<div class="text-center">
+<p class="text-2xl font-black">65°</p>
+<p class="text-xs opacity-50">54°</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="px-8 py-6 bg-white/2 border-t border-white/5 flex items-center justify-between">
+<div class="flex items-center gap-4 text-white/40 text-xs font-bold tracking-widest uppercase">
+<span>Radar Map</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Air Quality Index</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Pollen Count</span>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 border border-white/10 px-6 py-2 rounded-lg font-bold text-sm tracking-tight opacity-50 cursor-default">
+<span class="material-symbols-outlined text-lg">database</span>
+                    Live Data Stream
+                </div>
+</div>
+</footer>
+<div class="absolute bottom-32 right-12 glass-panel p-4 rounded-xl border border-white/20 hidden lg:block max-w-[240px]">
+<div class="flex items-center gap-3 mb-2">
+<div class="size-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">System Status: Active</span>
+</div>
+<p class="text-xs opacity-80 leading-relaxed">Atmospheric pressure is rising in the Balasore sector. Expect clear skies for the next 48 hours.</p>
+</div>
+</div>
+</div>
+
+</body></html>
